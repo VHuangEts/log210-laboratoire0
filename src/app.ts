@@ -61,13 +61,15 @@ class App {
 
     // Route pour classement (stats)
     router.get('/stats', (req, res, next) => {
+      const joueurs = JSON.parse(jeuRoutes.controleurJeu.joueurs);
+      const joueursAvecRatio = joueurs.map(obj => ({ ...obj , ratio: obj.lancersGagnes/obj.lancers})) /* à compléter en ajoutant joueur.ratio */;
       res.render('stats',
         // passer objet au gabarit (template) Pug
         {
           title: `${titreBase}`,
           user: user,
           // créer nouveau tableau de joueurs qui est trié par ratio
-          joueurs: JSON.parse(jeuRoutes.controleurJeu.joueurs)
+          joueurs: joueursAvecRatio /* à modifier */
         });
     });
 
@@ -96,6 +98,7 @@ class App {
     this.expressApp.use('/api/v1/jeu', jeuRoutes.router);  // tous les URI pour le scénario jeu (DSS) commencent ainsi
   }
 
+  
 }
 
 export default new App().expressApp;

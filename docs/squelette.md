@@ -206,3 +206,5 @@ Voici la même figure, mais sous forme de diagramme de séquence avec l'acteur. 
 - L'instance j de Joueur a été supprimée sur une base de correspondance avec nom
 ![Diagramme de séquence, terminerJeu](modeles/rdcu-terminerJeu.svg)
 
+**Diagramme de classes logicielles**
+![alt text](image.png)
