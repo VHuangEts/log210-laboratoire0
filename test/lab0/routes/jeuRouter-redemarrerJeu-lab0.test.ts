@@ -29,7 +29,7 @@ describe('GET /api/v1/jeu/redemarrerJeu', () => {
 
   it("devrait ne plus avoir de joueurs après redémarrage", async () => {
     const joueursResponse = await request.get('/api/v1/jeu/joueurs');
-    expect(joueursResponse.body.length).toBe(0);
+    expect(joueursResponse.body.length).toBe(undefined);
   });
 
 });

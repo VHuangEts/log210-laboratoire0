@@ -33,6 +33,17 @@ export class JeuDeDes {
         return JSON.stringify(joueur);
     }
 
+    public redemarrerJeu () {
+
+        this._joueurs.clear();
+        const resultat = {
+            message: "Le jeu se redémarre."
+        };
+        // ne pas retourner l'objet de la couche domaine
+        return JSON.stringify(resultat);
+        
+    }
+
     public jouer(nom: string): string {
         const joueur = this._joueurs.get(nom);
         if (!joueur) {
