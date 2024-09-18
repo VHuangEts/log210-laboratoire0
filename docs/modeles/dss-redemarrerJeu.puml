@@ -2,6 +2,7 @@
 
 title DSS pour le scénario Redémarrer
 skinparam style strictuml
+skinparam DefaultFontName Verdana
 actor ":Joueur" as J 
 participant ":Système" as S 
 
